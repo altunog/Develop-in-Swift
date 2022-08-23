@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HobbyTutorial" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="king.svg" translatesAutoresizingMaskIntoConstraints="NO" id="dJw-7l-FrT">
+                                <rect key="frame" x="20" y="144" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="HxI-CN-KG3"/>
+                                    <constraint firstAttribute="width" constant="170" id="SWP-jK-LN7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bishop.svg" translatesAutoresizingMaskIntoConstraints="NO" id="NPz-wi-nEr">
+                                <rect key="frame" x="20" y="384" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="ZxE-w1-r5k"/>
+                                    <constraint firstAttribute="height" constant="170" id="eKu-Av-aUj"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rook.svg" translatesAutoresizingMaskIntoConstraints="NO" id="pwi-6j-B6x">
+                                <rect key="frame" x="20" y="624" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="Wwy-lW-9Qd"/>
+                                    <constraint firstAttribute="width" constant="170" id="i5y-de-O3x"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="queen.svg" translatesAutoresizingMaskIntoConstraints="NO" id="oCC-os-kBu">
+                                <rect key="frame" x="238" y="144" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="DYf-tu-j2N"/>
+                                    <constraint firstAttribute="width" constant="170" id="lzP-9X-L0C"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="knight.svg" translatesAutoresizingMaskIntoConstraints="NO" id="adu-2j-2Rp">
+                                <rect key="frame" x="238" y="384" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="UGd-IG-TEg"/>
+                                    <constraint firstAttribute="width" constant="170" id="j2Z-VR-p8s"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawn.svg" translatesAutoresizingMaskIntoConstraints="NO" id="IZ4-MJ-MYH">
+                                <rect key="frame" x="238" y="624" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="NcG-UF-cxM"/>
+                                    <constraint firstAttribute="width" constant="170" id="YWd-ID-9Ed"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="King" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Crc-O1-fwI">
+                                <rect key="frame" x="88" y="322" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bishop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASs-G0-Fpj">
+                                <rect key="frame" x="79" y="562" width="53" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKF-7T-shL">
+                                <rect key="frame" x="86" y="802" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Knight" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjD-Jq-w1J">
+                                <rect key="frame" x="298" y="562" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Queen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqc-DV-iiV">
+                                <rect key="frame" x="298" y="322" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pawn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpf-fQ-drm">
+                                <rect key="frame" x="303" y="802" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="adu-2j-2Rp" secondAttribute="trailing" constant="20" id="2g5-Wc-ztb"/>
+                            <constraint firstItem="dJw-7l-FrT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="4P4-qn-JqQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IZ4-MJ-MYH" secondAttribute="trailing" constant="20" id="52a-x4-Nwg"/>
+                            <constraint firstItem="Qpf-fQ-drm" firstAttribute="top" secondItem="IZ4-MJ-MYH" secondAttribute="bottom" constant="8" symbolic="YES" id="6kI-u2-AWS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qpf-fQ-drm" secondAttribute="trailing" constant="84" id="7OR-Il-Wz9"/>
+                            <constraint firstItem="adu-2j-2Rp" firstAttribute="top" secondItem="xqc-DV-iiV" secondAttribute="bottom" constant="41" id="8IY-h1-4p4"/>
+                            <constraint firstItem="oCC-os-kBu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="FQa-tV-4g5"/>
+                            <constraint firstItem="pwi-6j-B6x" firstAttribute="top" secondItem="ASs-G0-Fpj" secondAttribute="bottom" constant="41" id="LBH-gm-229"/>
+                            <constraint firstItem="IZ4-MJ-MYH" firstAttribute="top" secondItem="sjD-Jq-w1J" secondAttribute="bottom" constant="41" id="LFQ-v3-9pv"/>
+                            <constraint firstItem="sjD-Jq-w1J" firstAttribute="leading" secondItem="ASs-G0-Fpj" secondAttribute="trailing" constant="166" id="Lt0-m0-VPX"/>
+                            <constraint firstItem="xqc-DV-iiV" firstAttribute="leading" secondItem="Crc-O1-fwI" secondAttribute="trailing" constant="176" id="Nj0-SJ-dLE"/>
+                            <constraint firstItem="xqc-DV-iiV" firstAttribute="top" secondItem="oCC-os-kBu" secondAttribute="bottom" constant="8" symbolic="YES" id="Plr-Ml-RLR"/>
+                            <constraint firstItem="Crc-O1-fwI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="88" id="TbN-0g-Zzl"/>
+                            <constraint firstItem="wKF-7T-shL" firstAttribute="top" secondItem="pwi-6j-B6x" secondAttribute="bottom" constant="8" symbolic="YES" id="Wpq-WW-Ufz"/>
+                            <constraint firstItem="pwi-6j-B6x" firstAttribute="top" secondItem="NPz-wi-nEr" secondAttribute="bottom" constant="70" id="Wt4-t8-If0"/>
+                            <constraint firstItem="wKF-7T-shL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="bxp-cS-F8a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oCC-os-kBu" secondAttribute="trailing" constant="20" id="fBU-rv-ebJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjD-Jq-w1J" secondAttribute="trailing" constant="80" id="fNs-NQ-4fl"/>
+                            <constraint firstItem="NPz-wi-nEr" firstAttribute="top" secondItem="Crc-O1-fwI" secondAttribute="bottom" constant="41" id="fQN-Bq-d8C"/>
+                            <constraint firstItem="IZ4-MJ-MYH" firstAttribute="top" secondItem="adu-2j-2Rp" secondAttribute="bottom" constant="70" id="gQ6-bA-51C"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xqc-DV-iiV" secondAttribute="trailing" constant="79" id="h1q-jD-Wse"/>
+                            <constraint firstItem="pwi-6j-B6x" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="icz-fW-z8Y"/>
+                            <constraint firstItem="dJw-7l-FrT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="m9C-rR-ELb"/>
+                            <constraint firstItem="adu-2j-2Rp" firstAttribute="top" secondItem="oCC-os-kBu" secondAttribute="bottom" constant="70" id="mbk-0A-kYY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Qpf-fQ-drm" secondAttribute="bottom" constant="69" id="nP9-cJ-dtL"/>
+                            <constraint firstItem="ASs-G0-Fpj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="79" id="nst-Jl-JCc"/>
+                            <constraint firstItem="sjD-Jq-w1J" firstAttribute="top" secondItem="adu-2j-2Rp" secondAttribute="bottom" constant="8" symbolic="YES" id="p2D-51-y3X"/>
+                            <constraint firstItem="ASs-G0-Fpj" firstAttribute="top" secondItem="NPz-wi-nEr" secondAttribute="bottom" constant="8" symbolic="YES" id="pb0-UP-3nI"/>
+                            <constraint firstItem="NPz-wi-nEr" firstAttribute="top" secondItem="dJw-7l-FrT" secondAttribute="bottom" constant="70" id="sPG-E9-Nf9"/>
+                            <constraint firstItem="NPz-wi-nEr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="wEQ-xT-H3Z"/>
+                            <constraint firstItem="Qpf-fQ-drm" firstAttribute="leading" secondItem="wKF-7T-shL" secondAttribute="trailing" constant="178" id="zNh-Nu-7Kz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wKF-7T-shL" secondAttribute="bottom" constant="69" id="zRQ-Wn-8Jf"/>
+                            <constraint firstItem="Crc-O1-fwI" firstAttribute="top" secondItem="dJw-7l-FrT" secondAttribute="bottom" constant="8" symbolic="YES" id="zzD-77-ZKO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="71" y="81"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bishop.svg" width="160" height="160"/>
+        <image name="king.svg" width="160" height="160"/>
+        <image name="knight.svg" width="160" height="160"/>
+        <image name="pawn.svg" width="160" height="160"/>
+        <image name="queen.svg" width="160" height="160"/>
+        <image name="rook.svg" width="160" height="160"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
