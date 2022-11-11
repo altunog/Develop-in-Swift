@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ISpy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ht6-TO-xVL">
+                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="istanbul" translatesAutoresizingMaskIntoConstraints="NO" id="P5j-hb-7Vd">
+                                        <rect key="frame" x="0.0" y="0.0" width="1920" height="2560"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="P5j-hb-7Vd" firstAttribute="top" secondItem="s34-Ta-zHW" secondAttribute="top" id="Hkc-bU-qpW"/>
+                                    <constraint firstItem="P5j-hb-7Vd" firstAttribute="bottom" secondItem="s34-Ta-zHW" secondAttribute="bottom" constant="763" id="RgJ-o7-QQQ"/>
+                                    <constraint firstItem="P5j-hb-7Vd" firstAttribute="trailing" secondItem="s34-Ta-zHW" secondAttribute="trailing" constant="390" id="jTq-KE-zBq"/>
+                                    <constraint firstItem="P5j-hb-7Vd" firstAttribute="leading" secondItem="s34-Ta-zHW" secondAttribute="leading" id="qUZ-M7-FZz"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="s34-Ta-zHW"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="k7W-LN-kdy"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ht6-TO-xVL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4hb-PZ-R9N"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ht6-TO-xVL" secondAttribute="bottom" id="JOc-uy-Nkd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ht6-TO-xVL" secondAttribute="trailing" id="f1a-9G-tUA"/>
+                            <constraint firstItem="ht6-TO-xVL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gfY-eN-0l1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="P5j-hb-7Vd" id="i1s-e2-JwH"/>
+                        <outlet property="scrollView" destination="ht6-TO-xVL" id="zyz-Xz-waa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.615384615384613" y="-28.436018957345969"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="istanbul" width="1920" height="2560"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
