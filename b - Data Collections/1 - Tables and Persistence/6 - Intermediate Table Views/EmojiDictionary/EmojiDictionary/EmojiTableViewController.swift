@@ -35,9 +35,21 @@ class EmojiTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-
-    // MARK: - Table view data source
-
+    
+    @IBSegueAction func addEditEmoji(_ coder: NSCoder, sender: Any?) -> UITableViewController? {
+        if let cell = sender as? EmojiTableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let emojiToEdit = emojis[indexPath.row]
+            return AddEditTableViewController(coder: coder, emoji: emojiToEdit)
+        } else {
+            return AddEditTableViewController(coder: coder, emoji: nil)
+        }
+    }
+    
+    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
+        
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,11 +66,6 @@ class EmojiTableViewController: UITableViewController {
         cell.showsReorderControl = true
         
         return cell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let emoji = emojis[indexPath.row]
-        print("\(emoji.symbol) \(indexPath)")
     }
 
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
