@@ -28,6 +28,7 @@ class EmojiTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = editButtonItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,6 +55,7 @@ class EmojiTableViewController: UITableViewController {
         content.text = "\(emoji.symbol) - \(emoji.name)"
         content.secondaryText = emoji.description
         cell.contentConfiguration = content
+        
         cell.showsReorderControl = true
         
         return cell
@@ -67,6 +69,16 @@ class EmojiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedEmoji = emojis.remove(at: sourceIndexPath.row)
         emojis.insert(movedEmoji, at: destinationIndexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            emojis.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
