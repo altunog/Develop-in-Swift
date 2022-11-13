@@ -69,9 +69,9 @@
 				6AF596D128DC407F0097C0C5 /* Info.plist */,
 				6AF596D728DC40C00097C0C5 /* Emoji.swift */,
 				6AF596D928DC42AD0097C0C5 /* Main.storyboard */,
+				6AF596DB28DC43350097C0C5 /* EmojiTableViewController.swift */,
 				6A93B89E29204F4B006BAF9D /* AddEditTableViewController.swift */,
 				6A93B89C29203E3E006BAF9D /* EmojiTableViewCell.swift */,
-				6AF596DB28DC43350097C0C5 /* EmojiTableViewController.swift */,
 			);
 			path = EmojiDictionary;
 			sourceTree = "<group>";

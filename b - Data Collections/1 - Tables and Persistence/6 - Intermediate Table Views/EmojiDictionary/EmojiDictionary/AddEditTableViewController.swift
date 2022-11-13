@@ -45,6 +45,15 @@ class AddEditTableViewController: UITableViewController {
         title = "Edit Emoji"
     }
     
+    func updateSaveButton() {
+        let nameText = nameTextField.text ?? ""
+        let descriptionText = descriptionTextField.text ?? ""
+        let usageText = usageTextField.text ?? ""
+        saveButton.isEnabled = containsSingleEmoji(symbolTextField) &&
+        !nameText.isEmpty && !descriptionText.isEmpty &&
+        !usageText.isEmpty
+    }
+    
     func containsSingleEmoji(_ textField: UITextField) -> Bool {
         guard let text = textField.text, text.count == 1 else {
             return false
@@ -57,13 +66,15 @@ class AddEditTableViewController: UITableViewController {
         return isEmojiPresentation || isCombinedEmoji
     }
     
-    func updateSaveButton() {
-        let nameText = nameTextField.text ?? ""
-        let descriptionText = descriptionTextField.text ?? ""
-        let usageText = usageTextField.text ?? ""
-        saveButton.isEnabled = containsSingleEmoji(symbolTextField) &&
-        !nameText.isEmpty && !descriptionText.isEmpty &&
-        !usageText.isEmpty
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let symbol = symbolTextField.text!
+        let name = nameTextField.text!
+        let description = descriptionTextField.text!
+        let usage = usageTextField.text!
+        emoji = Emoji(symbol: symbol, name: name,
+                      description: description, usage: usage)
     }
     
     @IBAction func textEditingChanged(_ sender: UITextField) {
