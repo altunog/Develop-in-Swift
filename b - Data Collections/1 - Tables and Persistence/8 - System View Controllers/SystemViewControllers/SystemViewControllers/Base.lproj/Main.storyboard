@@ -22,15 +22,58 @@
                                     <constraint firstAttribute="width" secondItem="uaJ-fb-igw" secondAttribute="height" id="71b-Tl-8BK"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="60E-ek-wft">
+                                <rect key="frame" x="20" y="420" width="353" height="34.333333333333314"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fIW-kB-HKb">
+                                        <rect key="frame" x="0.0" y="0.0" width="88.333333333333329" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Share"/>
+                                        <connections>
+                                            <action selector="shareButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1p2-uS-Zvi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdZ-26-dJT">
+                                        <rect key="frame" x="88.333333333333343" y="0.0" width="88.333333333333343" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Safari"/>
+                                        <connections>
+                                            <action selector="safariButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rFF-qp-0Sf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEr-At-Fed">
+                                        <rect key="frame" x="176.66666666666666" y="0.0" width="87.999999999999972" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Camera"/>
+                                        <connections>
+                                            <action selector="cameraButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSi-V9-Yaa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vbJ-3s-YQ2">
+                                        <rect key="frame" x="264.66666666666669" y="0.0" width="88.333333333333314" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Email"/>
+                                        <connections>
+                                            <action selector="emailButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n1e-rY-aZ5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="60E-ek-wft" firstAttribute="trailing" secondItem="uaJ-fb-igw" secondAttribute="trailing" id="6qu-jf-Vna"/>
+                            <constraint firstItem="60E-ek-wft" firstAttribute="leading" secondItem="uaJ-fb-igw" secondAttribute="leading" id="CGK-9A-8Ua"/>
                             <constraint firstItem="uaJ-fb-igw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GMu-6X-SNz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uaJ-fb-igw" secondAttribute="trailing" constant="20" id="I88-qm-gje"/>
                             <constraint firstItem="uaJ-fb-igw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xa8-yv-DTE"/>
+                            <constraint firstItem="60E-ek-wft" firstAttribute="top" secondItem="uaJ-fb-igw" secondAttribute="bottom" constant="8" symbolic="YES" id="mNT-P1-plD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="uaJ-fb-igw" id="2JR-LE-DY0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
