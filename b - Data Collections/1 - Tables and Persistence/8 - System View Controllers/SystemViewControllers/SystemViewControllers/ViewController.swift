@@ -7,8 +7,10 @@
 
 import UIKit
 import SafariServices
+import PhotosUI // MARK: imported to use PHPicker
+import MessageUI
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     
@@ -33,23 +35,43 @@ class ViewController: UIViewController {
     
     
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        
         let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
             alertController.dismiss(animated: true)
         }
-        
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
-            print("User selected \(action.title!) action")
-        }
-        
-        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
-            print("User selected \(action.title!) action")
-        }
-        
         alertController.addAction(cancelAction)
-        alertController.addAction(cameraAction)
-        alertController.addAction(photoLibraryAction)
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+                print("User selected \(action.title!) action")
+            }
+            alertController.addAction(cameraAction)
+        }
+        
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+                print("User selected \(action.title!) action")
+                imagePicker.sourceType = .photoLibrary
+                self.present(imagePicker, animated: true)
+            }
+            alertController.addAction(photoLibraryAction)
+        }
+        
+        // MARK: PHPicker Usage
+//        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+//            print("User selected \(action.title!) action")
+//            var configuration = PHPickerConfiguration()
+//            configuration.filter = .images
+//
+//            let picker = PHPickerViewController(configuration: configuration)
+//            picker.delegate = self
+//            self.present(picker, animated: true)
+//        }
+        
         alertController.popoverPresentationController?.sourceView = sender
         
         present(alertController, animated: true)
@@ -57,7 +79,35 @@ class ViewController: UIViewController {
     }
     
     @IBAction func emailButtonTapped(_ sender: UIButton) {
+        guard MFMailComposeViewController.canSendMail() else { return }
+        
     }
     
 }
 
+extension ViewController: UIImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let selectedImage = info[.originalImage] as? UIImage else { return }
+        
+        imageView.image = selectedImage
+        dismiss(animated: true)
+    }
+}
+
+extension ViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        dismiss(animated: true)
+        
+        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self) {
+            let previousImage = imageView.image
+            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] image, error in
+                DispatchQueue.main.async {
+                    guard let self = self, let image = image as? UIImage, self.imageView.image == previousImage else { return }
+                    self.imageView.image = image
+                }
+            }
+        }
+    }
+}
