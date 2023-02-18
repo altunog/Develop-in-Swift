@@ -81,6 +81,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBAction func emailButtonTapped(_ sender: UIButton) {
         guard MFMailComposeViewController.canSendMail() else { return }
         
+        let mailComposer = MFMailComposeViewController()
+        mailComposer.delegate = self
+        mailComposer.setToRecipients(["example@example.com"])
+        mailComposer.setSubject("Look at this")
+        mailComposer.setMessageBody("Hello, this is an email from the app I made.", isHTML: false)
+        
+        if let image = imageView.image, let jpegData = image.jpegData(compressionQuality: 0.9) {
+            mailComposer.addAttachmentData(jpegData, mimeType: "image/jpeg", fileName: "photo.jpg")
+        }
+        
+        present(mailComposer, animated: true)
     }
     
 }
@@ -91,6 +102,12 @@ extension ViewController: UIImagePickerControllerDelegate {
         guard let selectedImage = info[.originalImage] as? UIImage else { return }
         
         imageView.image = selectedImage
+        dismiss(animated: true)
+    }
+}
+
+extension ViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         dismiss(animated: true)
     }
 }
