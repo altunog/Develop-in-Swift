@@ -33,6 +33,27 @@ class ViewController: UIViewController {
     
     
     @IBAction func cameraButtonTapped(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Choose Image Source", message: nil, preferredStyle: .actionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            alertController.dismiss(animated: true)
+        }
+        
+        let cameraAction = UIAlertAction(title: "Camera", style: .default) { action in
+            print("User selected \(action.title!) action")
+        }
+        
+        let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default) { action in
+            print("User selected \(action.title!) action")
+        }
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(cameraAction)
+        alertController.addAction(photoLibraryAction)
+        alertController.popoverPresentationController?.sourceView = sender
+        
+        present(alertController, animated: true)
+        
     }
     
     @IBAction func emailButtonTapped(_ sender: UIButton) {
