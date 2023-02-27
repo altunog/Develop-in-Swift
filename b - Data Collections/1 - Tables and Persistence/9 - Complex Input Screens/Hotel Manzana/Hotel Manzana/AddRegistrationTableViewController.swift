@@ -18,6 +18,13 @@ class AddRegistrationTableViewController: UITableViewController {
     @IBOutlet weak var checkOutDatelabel: UILabel!
     @IBOutlet weak var checkOutDatePicker: UIDatePicker!
     
+    @IBOutlet weak var numberOfAdultsLabel: UILabel!
+    @IBOutlet weak var numberOfAdultsStepper: UIStepper!
+    @IBOutlet weak var numberOfChildrenLabel: UILabel!
+    @IBOutlet weak var numberOfChildrenStepper: UIStepper!
+    
+    @IBOutlet weak var wifiSwitch: UISwitch!
+    
     let checkInDateLabelCellIndexPath = IndexPath(item: 0, section: 1)
     let checkInDatePickerCellIndexPath = IndexPath(item: 1, section: 1)
     let checkOutDateLabelCellIndexPath = IndexPath(item: 2, section: 1)
@@ -56,12 +63,27 @@ class AddRegistrationTableViewController: UITableViewController {
         updateDateViews()
     }
     
+    func updateNumberOfGuests() {
+        numberOfAdultsLabel.text = "\(Int(numberOfAdultsStepper.value))"
+        numberOfChildrenLabel.text = "\(Int(numberOfChildrenStepper.value))"
+    }
+    
+    @IBAction func stepperValueChanged(_ stepper: UIStepper) {
+        updateNumberOfGuests()
+    }
+    
+    @IBAction func wifiSwitchChanged(_ sender: Any) {
+    }
+    
     @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
         let firstName = firstNameTextField.text ?? ""
         let lastName = lastNameTextField.text ?? ""
         let email = emailTextField.text ?? ""
         let checkInDate = checkInDatePicker.date
         let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
         
         print("DONE Tapped")
         print("First name: \(firstName)")
@@ -69,6 +91,9 @@ class AddRegistrationTableViewController: UITableViewController {
         print("Email: \(email)")
         print("Check-In: \(checkInDate)")
         print("Check-Out: \(checkOutDate)")
+        print("Number of Adults: \(numberOfAdults)")
+        print("Number of Children: \(numberOfChildren)")
+        print("Has Wi-Fi: \(hasWifi)")
     }
     
 }
