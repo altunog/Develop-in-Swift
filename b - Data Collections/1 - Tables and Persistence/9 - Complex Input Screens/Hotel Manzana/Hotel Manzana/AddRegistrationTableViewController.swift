@@ -109,7 +109,7 @@ class AddRegistrationTableViewController: UITableViewController {
         updateNumberOfGuests()
     }
     
-    @IBAction func wifiSwitchChanged(_ sender: Any) {
+    @IBAction func wifiSwitchChanged(_ sender: UISwitch) {
     }
     
     @IBSegueAction func selectRoomType(_ coder: NSCoder) -> SelectRoomTypeTableViewController? {
@@ -121,28 +121,8 @@ class AddRegistrationTableViewController: UITableViewController {
         return selectRoomTypeController
     }
     
-    
-    @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
-        let firstName = firstNameTextField.text ?? ""
-        let lastName = lastNameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let checkInDate = checkInDatePicker.date
-        let checkOutDate = checkOutDatePicker.date
-        let numberOfAdults = Int(numberOfAdultsStepper.value)
-        let numberOfChildren = Int(numberOfChildrenStepper.value)
-        let hasWifi = wifiSwitch.isOn
-        let roomChoice = roomType?.name ?? "Not Set"
-        
-        print("DONE Tapped")
-        print("First name: \(firstName)")
-        print("Last name: \(lastName)")
-        print("Email: \(email)")
-        print("Check-In: \(checkInDate)")
-        print("Check-Out: \(checkOutDate)")
-        print("Number of Adults: \(numberOfAdults)")
-        print("Number of Children: \(numberOfChildren)")
-        print("Has Wi-Fi: \(hasWifi)")
-        print("Room type: \(roomChoice)")
+    @IBAction func cancelButtonTapped(_ sender: UIButton) {
+        dismiss(animated: true)
     }
 }
 
