@@ -13,11 +13,11 @@ struct Registration {
     var emailAddress: String
     
     var checkInDate: Date
-    var checOutDate: Date
+    var checkOutDate: Date
     var numberOfAdults: Int
     var numberOfChildren: Int
     
-    var hasWifi: Bool
+    var wifi: Bool
     var roomType: RoomType
 }
 

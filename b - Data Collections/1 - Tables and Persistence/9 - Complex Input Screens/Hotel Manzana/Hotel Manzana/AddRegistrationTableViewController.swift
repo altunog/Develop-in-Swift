@@ -8,7 +8,30 @@
 import UIKit
 
 class AddRegistrationTableViewController: UITableViewController {
+    
+    var registration: Registration? {
+        guard let roomType = roomType else { return nil }
+        
+        let firstName = firstNameTextField.text ?? ""
+        let lastName = lastNameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let checkInDate = checkInDatePicker.date
+        let checkOutDate = checkOutDatePicker.date
+        let numberOfAdults = Int(numberOfAdultsStepper.value)
+        let numberOfChildren = Int(numberOfChildrenStepper.value)
+        let hasWifi = wifiSwitch.isOn
 
+        return Registration(firstName: firstName,
+                            lastName: lastName,
+                            emailAddress: email,
+                            checkInDate: checkInDate,
+                            checkOutDate: checkOutDate,
+                            numberOfAdults: numberOfAdults,
+                            numberOfChildren: numberOfChildren,
+                            wifi: hasWifi,
+                            roomType: roomType)
+    }
+    
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -143,7 +166,7 @@ extension AddRegistrationTableViewController {
         }
         
         
-//        tableView.performBatchUpdates(nil)
+        //        tableView.performBatchUpdates(nil)
         tableView.beginUpdates()
         tableView.endUpdates()
     }
