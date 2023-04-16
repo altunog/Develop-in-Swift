@@ -25,6 +25,10 @@ class AddRegistrationTableViewController: UITableViewController {
     
     @IBOutlet weak var wifiSwitch: UISwitch!
     
+    @IBOutlet weak var roomTypeLabel: UILabel!
+    var roomType: RoomType?
+    
+    
     let checkInDateLabelCellIndexPath = IndexPath(item: 0, section: 1)
     let checkInDatePickerCellIndexPath = IndexPath(item: 1, section: 1)
     let checkOutDateLabelCellIndexPath = IndexPath(item: 2, section: 1)
@@ -50,6 +54,8 @@ class AddRegistrationTableViewController: UITableViewController {
         checkInDatePicker.date = midnightToday
         
         updateDateViews()
+        updateNumberOfGuests()
+        updateRoomType()
     }
     
     func updateDateViews() {
@@ -68,12 +74,30 @@ class AddRegistrationTableViewController: UITableViewController {
         numberOfChildrenLabel.text = "\(Int(numberOfChildrenStepper.value))"
     }
     
+    func updateRoomType() {
+        if let roomType = roomType {
+            roomTypeLabel.text = roomType.name
+        } else {
+            roomTypeLabel.text = "Not Set"
+        }
+    }
+    
     @IBAction func stepperValueChanged(_ stepper: UIStepper) {
         updateNumberOfGuests()
     }
     
     @IBAction func wifiSwitchChanged(_ sender: Any) {
     }
+    
+    @IBSegueAction func selectRoomType(_ coder: NSCoder) -> SelectRoomTypeTableViewController? {
+        
+        let selectRoomTypeController = SelectRoomTypeTableViewController(coder: coder)
+        selectRoomTypeController?.delegate = self
+        selectRoomTypeController?.roomType = roomType
+        
+        return selectRoomTypeController
+    }
+    
     
     @IBAction func doneBarButtonTapped(_ sender: UIBarButtonItem) {
         let firstName = firstNameTextField.text ?? ""
@@ -84,6 +108,7 @@ class AddRegistrationTableViewController: UITableViewController {
         let numberOfAdults = Int(numberOfAdultsStepper.value)
         let numberOfChildren = Int(numberOfChildrenStepper.value)
         let hasWifi = wifiSwitch.isOn
+        let roomChoice = roomType?.name ?? "Not Set"
         
         print("DONE Tapped")
         print("First name: \(firstName)")
@@ -94,8 +119,8 @@ class AddRegistrationTableViewController: UITableViewController {
         print("Number of Adults: \(numberOfAdults)")
         print("Number of Children: \(numberOfChildren)")
         print("Has Wi-Fi: \(hasWifi)")
+        print("Room type: \(roomChoice)")
     }
-    
 }
 
 extension AddRegistrationTableViewController {
@@ -118,9 +143,9 @@ extension AddRegistrationTableViewController {
         }
         
         
-        tableView.performBatchUpdates(nil)
-//        tableView.beginUpdates()
-//        tableView.endUpdates()
+//        tableView.performBatchUpdates(nil)
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -143,5 +168,13 @@ extension AddRegistrationTableViewController {
         default:
             return UITableView.automaticDimension
         }
+    }
+}
+
+extension AddRegistrationTableViewController: SelectRoomTypeTableViewControllerDelegate {
+    
+    func selectRoomTypeTableViewController(_ controller: SelectRoomTypeTableViewController, didSelect roomType: RoomType) {
+        self.roomType = roomType
+        updateRoomType()
     }
 }
