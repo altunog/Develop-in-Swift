@@ -28,6 +28,9 @@
                                                     <rect key="frame" x="20" y="11" width="313" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="name"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="8hR-zl-K4X" eventType="editingChanged" id="ji4-w4-k9N"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -49,6 +52,9 @@
                                                     <rect key="frame" x="20" y="11" width="313" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="words" textContentType="family-name"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="8hR-zl-K4X" eventType="editingChanged" id="Rn4-5S-NOO"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -70,6 +76,9 @@
                                                     <rect key="frame" x="20" y="11" width="313" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" textContentType="email"/>
+                                                    <connections>
+                                                        <action selector="editingDidChange:" destination="8hR-zl-K4X" eventType="editingChanged" id="EdN-je-e9v"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -181,7 +190,7 @@
                             <tableViewSection id="N4p-Io-FVh">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="RyF-o4-fIv">
-                                        <rect key="frame" x="20" y="778.99998855590832" width="353" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="778.9999885559082" width="353" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RyF-o4-fIv" id="Usr-sR-TR5">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
@@ -218,7 +227,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ste-sI-NEi">
-                                        <rect key="frame" x="20" y="822.66665649414074" width="353" height="43.666667938232422"/>
+                                        <rect key="frame" x="20" y="822.66665649414062" width="353" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ste-sI-NEi" id="2oD-zz-nvD">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
@@ -259,7 +268,7 @@
                             <tableViewSection id="eim-JO-5fm">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="WdV-8M-rNr">
-                                        <rect key="frame" x="20" y="902.33332443237316" width="353" height="44"/>
+                                        <rect key="frame" x="20" y="902.33332443237305" width="353" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WdV-8M-rNr" id="U1O-EF-IQk">
                                             <rect key="frame" x="0.0" y="0.0" width="353" height="44"/>
@@ -300,21 +309,21 @@
                             <tableViewSection id="13j-da-eq9">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="b7Q-lT-XTn" detailTextLabel="eSf-Ju-sCn" style="IBUITableViewCellStyleValue1" id="lye-Sk-Muy">
-                                        <rect key="frame" x="20" y="982.33332443237316" width="353" height="43.999999999999886"/>
+                                        <rect key="frame" x="20" y="982.33332443237305" width="353" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lye-Sk-Muy" id="Gai-zq-Kde">
-                                            <rect key="frame" x="0.0" y="0.0" width="334.66666666666669" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="322.66666666666669" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Room Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b7Q-lT-XTn">
-                                                    <rect key="frame" x="8" y="11.999999999999998" width="85.666666666666671" height="20.333333333333332"/>
+                                                    <rect key="frame" x="20" y="11.999999999999998" width="85.666666666666671" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSf-Ju-sCn">
-                                                    <rect key="frame" x="283" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
+                                                    <rect key="frame" x="271" y="11.999999999999998" width="43.666666666666664" height="20.333333333333332"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -323,7 +332,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="fRB-Ls-3e7" kind="show" destinationCreationSelector="selectRoomType:" id="Fjm-OB-39m"/>
+                                            <segue destination="fRB-Ls-3e7" kind="show" identifier="room" destinationCreationSelector="selectRoomType:" id="Fjm-OB-39m"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -337,12 +346,12 @@
                     <navigationItem key="navigationItem" title="New Guest Registration" id="7c0-VH-IOK">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dzf-uh-mBx">
                             <connections>
-                                <action selector="cancelButtonTapped:" destination="8hR-zl-K4X" id="RUw-ga-OjW"/>
+                                <segue destination="MPw-qv-a5P" kind="unwind" identifier="cancelUnwind" unwindAction="unwindFromAddRegistrationWithUnwindSegue:" id="yMX-GN-kTB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="3iD-1e-xdB">
                             <connections>
-                                <segue destination="MPw-qv-a5P" kind="unwind" unwindAction="unwindFromAddRegistrationWithUnwindSegue:" id="aTD-DA-Tyi"/>
+                                <segue destination="MPw-qv-a5P" kind="unwind" identifier="saveUnwind" unwindAction="unwindFromAddRegistrationWithUnwindSegue:" id="aTD-DA-Tyi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -351,6 +360,7 @@
                         <outlet property="checkInDatePicker" destination="aQx-7e-pZC" id="ARm-RG-aIE"/>
                         <outlet property="checkOutDatePicker" destination="Rmh-qb-ytI" id="Xg3-HT-TbI"/>
                         <outlet property="checkOutDatelabel" destination="KoE-Nf-wdb" id="Grn-Ry-Cqj"/>
+                        <outlet property="doneButton" destination="3iD-1e-xdB" id="zD5-kl-hno"/>
                         <outlet property="emailTextField" destination="viN-vI-tc9" id="OJI-eh-xst"/>
                         <outlet property="firstNameTextField" destination="l0s-nk-WZF" id="Olr-qP-ugo"/>
                         <outlet property="lastNameTextField" destination="ney-bz-f9Q" id="a2a-Vj-qXG"/>
@@ -443,6 +453,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vGO-V7-Exq" kind="presentation" id="s8c-Yh-xCy"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -453,7 +466,7 @@
                     <navigationItem key="navigationItem" id="TZD-Db-HaD">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="h18-xh-aDk">
                             <connections>
-                                <segue destination="vGO-V7-Exq" kind="presentation" id="WSd-xg-hlH"/>
+                                <segue destination="vGO-V7-Exq" kind="presentation" identifier="" id="WSd-xg-hlH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -472,12 +485,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="8hR-zl-K4X" kind="relationship" relationship="rootViewController" id="cKQ-ax-80W"/>
+                        <segue destination="8hR-zl-K4X" kind="relationship" relationship="rootViewController" destinationCreationSelector="addEditRegistration:sender:" id="cKQ-ax-80W"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3z-6R-6JW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-332" y="16"/>
+            <point key="canvasLocation" x="-332" y="15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iyu-hl-4og">
@@ -498,6 +511,9 @@
             <point key="canvasLocation" x="-1190" y="-727"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="s8c-Yh-xCy"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -13,18 +13,41 @@ class RegistrationTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        clearsSelectionOnViewWillAppear = true
+    }
+    
+    @IBSegueAction func addEditRegistration(_ coder: NSCoder, sender: Any?) -> AddRegistrationTableViewController? {
+        if let cell = sender as? UITableViewCell,
+           let indexPath = tableView.indexPath(for: cell) {
+            let registrationToEdit = registrations[indexPath.row]
+            return AddRegistrationTableViewController(coder: coder, registration: registrationToEdit)
+        } else {
+            return AddRegistrationTableViewController(coder: coder, registration: nil)
+        }
+    }
+    @IBAction func unwindFromAddRegistration(unwindSegue: UIStoryboardSegue) {
+        if unwindSegue.identifier == "cancelUnwind" {
+            tableView.reloadData()
+            return
+        }
         
+        guard unwindSegue.identifier == "saveUnwind",
+              let sourceVC = unwindSegue.source as? AddRegistrationTableViewController,
+              let registration = sourceVC.registration else { return }
         
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            registrations[selectedIndexPath.row] = registration
+            tableView.reloadRows(at: [selectedIndexPath], with: .none)
+        } else {
+            let newIndexPath = IndexPath(row: registrations.count, section: 0)
+            registrations.append(registration)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
     
     
-    @IBAction func unwindFromAddRegistration(unwindSegue: UIStoryboardSegue) {
-        guard let addRegistrationTableViewController = unwindSegue.source as? AddRegistrationTableViewController,
-              let registration = addRegistrationTableViewController.registration
-        else { return }
-        
-        registrations.append(registration)
-        tableView.reloadData()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
     // MARK: - Table view data source
