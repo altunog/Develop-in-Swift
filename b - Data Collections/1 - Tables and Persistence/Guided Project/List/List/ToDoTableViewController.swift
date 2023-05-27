@@ -51,7 +51,28 @@ class ToDoTableViewController: UITableViewController {
 
 extension ToDoTableViewController {
     
-    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+    @IBSegueAction func editToDo(_ coder: NSCoder, sender: Any?) -> ToDoDetailTableViewController? {
+        let detailController = ToDoDetailTableViewController(coder: coder)
         
+        guard let senderCell = sender as? UITableViewCell,
+              let indexPath = tableView.indexPath(for: senderCell) else {
+            return detailController
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        detailController?.toDo = toDos[indexPath.row]
+        
+        return detailController
+    }
+    
+    @IBAction func unwindToToDoList(segue: UIStoryboardSegue) {
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let sourceController = segue.source as! ToDoDetailTableViewController
+        if let toDo = sourceController.toDo {
+            let newIndexPath = IndexPath(row: toDos.count, section: 0)
+            toDos.append(toDo)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        }
     }
 }

@@ -8,6 +8,8 @@
 import UIKit
 
 class ToDoDetailTableViewController: UITableViewController {
+    
+    var toDo: ToDo?
 
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var isCompleteButton: UIButton!
@@ -51,6 +53,21 @@ class ToDoDetailTableViewController: UITableViewController {
     
     @IBAction func datePickerChanged(_ sender: UIDatePicker) {
         updateDueDateLabel(date: sender.date)
+    }
+}
+
+extension ToDoDetailTableViewController {
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        guard segue.identifier == "saveUnwind" else { return }
+        
+        let title = titleTextField.text!
+        let isComplete = isCompleteButton.isSelected
+        let dueDate = dueDateDatePicker.date
+        let notes = notesTextView.text
+        
+        toDo = ToDo(title: title, isComplete: isComplete, dueDate: dueDate, notes: notes)
     }
 }
 
