@@ -69,10 +69,16 @@ extension ToDoTableViewController {
         guard segue.identifier == "saveUnwind" else { return }
         
         let sourceController = segue.source as! ToDoDetailTableViewController
+
         if let toDo = sourceController.toDo {
-            let newIndexPath = IndexPath(row: toDos.count, section: 0)
-            toDos.append(toDo)
-            tableView.insertRows(at: [newIndexPath], with: .automatic)
+            if let indexOfExistingToDo = toDos.firstIndex(of: toDo) {
+                toDos[indexOfExistingToDo] = toDo
+                tableView.reloadRows(at: [IndexPath(row: indexOfExistingToDo, section: 0)], with: .automatic)
+            } else {
+                let newIndexPath = IndexPath(row: toDos.count, section: 0)
+                toDos.append(toDo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
         }
     }
 }
