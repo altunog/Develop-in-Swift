@@ -37,6 +37,9 @@
                                             <state key="selected" image="checkmark.circle.fill" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
                                             </state>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="sOi-t1-oGY" eventType="touchUpInside" id="4Pd-S8-AXy"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-yA-NqQ" userLabel="Title Label">
                                             <rect key="frame" x="64" y="11.000000000000002" width="313" height="20.666666666666671"/>

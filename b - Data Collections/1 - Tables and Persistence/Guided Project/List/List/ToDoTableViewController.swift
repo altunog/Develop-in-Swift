@@ -37,7 +37,7 @@ class ToDoTableViewController: UITableViewController {
         let toDo = toDos[indexPath.row]
         cell.titleLabel.text = toDo.title
         cell.isCompleteButton.isSelected = toDo.isComplete
-        
+        cell.delegate = self
         return cell
     }
     
@@ -45,6 +45,18 @@ class ToDoTableViewController: UITableViewController {
         if editingStyle == .delete {
             toDos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+}
+
+extension ToDoTableViewController: ToDoCellDelegate {
+    
+    func checkmarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var toDo = toDos[indexPath.row]
+            toDo.isComplete.toggle()
+            toDos[indexPath.row] = toDo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
         }
     }
 }
