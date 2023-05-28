@@ -45,6 +45,7 @@ class ToDoTableViewController: UITableViewController {
         if editingStyle == .delete {
             toDos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDos(toDos)
         }
     }
 }
@@ -57,6 +58,7 @@ extension ToDoTableViewController: ToDoCellDelegate {
             toDo.isComplete.toggle()
             toDos[indexPath.row] = toDo
             tableView.reloadRows(at: [indexPath], with: .automatic)
+            ToDo.saveToDos(toDos)
         }
     }
 }
@@ -92,5 +94,6 @@ extension ToDoTableViewController {
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             }
         }
+        ToDo.saveToDos(toDos)
     }
 }
