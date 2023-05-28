@@ -17,13 +17,46 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="sOi-t1-oGY" userLabel="ToDoCell" customClass="ToDoCell" customModule="List" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="42.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sOi-t1-oGY" id="tj0-IR-1rB">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="42.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NJ-9v-F5H">
+                                            <rect key="frame" x="12" y="-0.66666666666666785" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="Wuq-XF-1KN"/>
+                                                <constraint firstAttribute="width" constant="44" id="gaq-ce-gJW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                            <state key="normal" image="circle" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                            </state>
+                                            <state key="selected" image="checkmark.circle.fill" catalog="system">
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpK-yA-NqQ" userLabel="Title Label">
+                                            <rect key="frame" x="64" y="11.000000000000002" width="313" height="20.666666666666671"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="VpK-yA-NqQ" secondAttribute="bottom" id="Wdz-90-4dB"/>
+                                        <constraint firstItem="8NJ-9v-F5H" firstAttribute="leading" secondItem="tj0-IR-1rB" secondAttribute="leading" constant="12" id="dZD-qE-i6x"/>
+                                        <constraint firstAttribute="trailing" secondItem="VpK-yA-NqQ" secondAttribute="trailing" constant="16" id="iZx-vA-T3t"/>
+                                        <constraint firstItem="8NJ-9v-F5H" firstAttribute="centerY" secondItem="tj0-IR-1rB" secondAttribute="centerY" id="iqv-YY-DPo"/>
+                                        <constraint firstItem="VpK-yA-NqQ" firstAttribute="top" secondItem="tj0-IR-1rB" secondAttribute="topMargin" id="jDD-eZ-oX5"/>
+                                        <constraint firstItem="VpK-yA-NqQ" firstAttribute="leading" secondItem="8NJ-9v-F5H" secondAttribute="trailing" constant="8" id="lrc-BW-yPt"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="isCompleteButton" destination="8NJ-9v-F5H" id="m8g-8s-Nse"/>
+                                    <outlet property="titleLabel" destination="VpK-yA-NqQ" id="ZyO-0U-MbD"/>
                                     <segue destination="dSA-8j-ZbD" kind="presentation" id="zFV-q6-09P"/>
                                 </connections>
                             </tableViewCell>
@@ -64,7 +97,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LyV-bP-vZn">
-                                                    <rect key="frame" x="13" y="7.6666666666666679" width="28" height="29.000000000000004"/>
+                                                    <rect key="frame" x="12" y="7.6666666666666679" width="28" height="29.000000000000004"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" image="circle" catalog="system">
@@ -78,7 +111,7 @@
                                                     </connections>
                                                 </button>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Remind me to..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JmS-IZ-gWg">
-                                                    <rect key="frame" x="49" y="4.6666666666666679" width="328" height="34.333333333333329"/>
+                                                    <rect key="frame" x="48" y="4.6666666666666679" width="329" height="34.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
@@ -89,7 +122,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="JmS-IZ-gWg" secondAttribute="bottom" constant="5.0000012715657505" id="AJg-zf-eGa"/>
-                                                <constraint firstItem="LyV-bP-vZn" firstAttribute="leading" secondItem="8gy-Wr-IGU" secondAttribute="leading" constant="13" id="D4c-Un-ifK"/>
+                                                <constraint firstItem="LyV-bP-vZn" firstAttribute="leading" secondItem="8gy-Wr-IGU" secondAttribute="leading" constant="12" id="D4c-Un-ifK"/>
                                                 <constraint firstAttribute="trailing" secondItem="JmS-IZ-gWg" secondAttribute="trailing" constant="16" id="GZ7-tD-tOh"/>
                                                 <constraint firstItem="JmS-IZ-gWg" firstAttribute="top" secondItem="8gy-Wr-IGU" secondAttribute="top" constant="4.6666679382324219" id="cej-Iv-CIQ"/>
                                                 <constraint firstItem="JmS-IZ-gWg" firstAttribute="leading" secondItem="LyV-bP-vZn" secondAttribute="trailing" constant="8" id="e0X-JV-3io"/>

@@ -8,7 +8,11 @@
 import UIKit
 
 class ToDoCell: UITableViewCell {
-
+    
+    
+    @IBOutlet weak var isCompleteButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

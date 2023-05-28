@@ -35,9 +35,9 @@ class ToDoTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath) as! ToDoCell
         
         let toDo = toDos[indexPath.row]
-        var content = cell.defaultContentConfiguration()
-        content.text = toDo.title
-        cell.contentConfiguration = content
+        cell.titleLabel.text = toDo.title
+        cell.isCompleteButton.isSelected = toDo.isComplete
+        
         return cell
     }
     

@@ -12,7 +12,7 @@ class ToDoDetailTableViewController: UITableViewController {
     var toDo: ToDo?
 
     @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var isCompleteButton: UIButton!
+    @IBOutlet private weak var isCompleteButton: UIButton!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var dueDateDatePicker: UIDatePicker!
     @IBOutlet weak var notesTextView: UITextView!
