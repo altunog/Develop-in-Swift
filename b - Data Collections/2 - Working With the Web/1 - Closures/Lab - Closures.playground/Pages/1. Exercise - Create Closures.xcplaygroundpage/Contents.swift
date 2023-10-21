@@ -3,7 +3,7 @@
  
  Create a closure assigned to a constant `blankClosure` that has no parameters and no return value.
  */
-let blankClosure = {
+let blankClosure = { () in
     print("A blank closure")
 }
 
