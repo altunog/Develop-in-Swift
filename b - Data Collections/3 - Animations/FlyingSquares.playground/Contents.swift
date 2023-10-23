@@ -14,12 +14,7 @@ square.backgroundColor = .purple
 
 liveView.addSubview(square)
 
-UIView.animate(withDuration: 3.0) {
+UIView.animate(withDuration: 3.0, delay: 2.0, options: [.repeat], animations: {
     square.backgroundColor = .orange
     square.frame = CGRect(x: 150, y: 150, width: 250, height: 250)
-} completion: { _ in
-    UIView.animate(withDuration: 3.0) {
-        square.backgroundColor = .purple
-        square.frame = smallFrame
-    }
-}
+}, completion: nil)
