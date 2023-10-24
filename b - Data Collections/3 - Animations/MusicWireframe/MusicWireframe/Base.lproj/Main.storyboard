@@ -101,6 +101,15 @@
                             <constraint firstItem="1gr-ya-sMk" firstAttribute="centerX" secondItem="A6F-cc-gnJ" secondAttribute="centerX" id="wwl-uz-MeZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="albumImageView" destination="TSx-f1-h32" id="FnM-bT-fHo"/>
+                        <outlet property="forwardBackgorund" destination="kh1-RT-XXk" id="hQQ-aR-wa6"/>
+                        <outlet property="forwardButton" destination="dsD-49-NDO" id="rnw-hX-SBA"/>
+                        <outlet property="playPauseBackground" destination="8fn-mK-Ed4" id="gwU-5n-gsO"/>
+                        <outlet property="playPauseButton" destination="sIK-DR-oFb" id="xTO-Cq-o8Y"/>
+                        <outlet property="reverseBackground" destination="1gr-ya-sMk" id="dUX-xn-gu7"/>
+                        <outlet property="reverseButton" destination="A6F-cc-gnJ" id="1YJ-nX-nDD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
