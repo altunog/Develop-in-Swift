@@ -13,11 +13,14 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func submitButtonTapped(_ sender: UIButton) {
         if emailTextField.text?.isEmpty ?? true {
+            emailTextField.layer.cornerRadius = 6
+            emailTextField.layer.borderColor = UIColor.systemRed.cgColor
+            emailTextField.layer.borderWidth = 1
+            emailTextField.backgroundColor = .systemRed.withAlphaComponent(0.2)
             UIView.animateKeyframes(withDuration: 0.2, delay: 0, options: [.autoreverse]) {
                 self.emailTextField.transform = CGAffineTransform(translationX: 5, y: 0)
             } completion: { _ in
