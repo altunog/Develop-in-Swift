@@ -49,8 +49,73 @@ class ViewController: UIViewController {
                 self.albumImageView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             }
         }
-        
     }
     
+    
+    @IBAction func touchedDown(_ sender: UIButton) {
+        let buttonBackground: UIView
+        
+        switch sender {
+        case reverseButton:
+            buttonBackground = reverseBackground
+        case playPauseButton:
+            buttonBackground = playPauseBackground
+        case forwardButton:
+            buttonBackground = forwardBackgorund
+        default:
+            return
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            buttonBackground.alpha = 0.3
+            sender.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        }
+    }
+    
+    @IBAction func touchedUpInside(_ sender: UIButton) {
+        let buttonBackground: UIView
+        
+        switch sender {
+        case reverseButton:
+            buttonBackground = reverseBackground
+        case playPauseButton:
+            buttonBackground = playPauseBackground
+        case forwardButton:
+            buttonBackground = forwardBackgorund
+        default:
+            return
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            buttonBackground.alpha = 0
+            buttonBackground.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            sender.transform = .identity
+        } completion: { _ in
+            buttonBackground.transform = .identity
+        }
+    }
+    
+    @IBAction func touchedUpOutside(_ sender: UIButton) {
+        let buttonBackground: UIView
+        
+        switch sender {
+        case reverseButton:
+            buttonBackground = reverseBackground
+        case playPauseButton:
+            buttonBackground = playPauseBackground
+        case forwardButton:
+            buttonBackground = forwardBackgorund
+        default:
+            return
+        }
+        
+        UIView.animate(withDuration: 0.25) {
+            buttonBackground.alpha = 0
+            buttonBackground.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            sender.transform = .identity
+        } completion: { _ in
+            buttonBackground.transform = .identity
+        }
+    }
 }
 

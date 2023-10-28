@@ -54,6 +54,11 @@
                                         <state key="normal" image="backward.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="ADp-DS-lL7"/>
+                                            <action selector="touchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lp6-Z0-tPO"/>
+                                            <action selector="touchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="sr1-kc-bNW"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIK-DR-oFb" userLabel="Play Pause Button">
                                         <rect key="frame" x="111.33333333333334" y="0.0" width="50" height="50"/>
@@ -71,6 +76,9 @@
                                         </state>
                                         <connections>
                                             <action selector="playPauseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J66-Hb-U1B"/>
+                                            <action selector="touchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="5VE-zo-Aa3"/>
+                                            <action selector="touchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a5O-6e-u90"/>
+                                            <action selector="touchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="apY-Ff-cvv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsD-49-NDO" userLabel="Forward Button">
@@ -80,6 +88,11 @@
                                         <state key="normal" image="forward.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                         </state>
+                                        <connections>
+                                            <action selector="touchedDown:" destination="BYZ-38-t0r" eventType="touchDown" id="vwM-8x-mvf"/>
+                                            <action selector="touchedUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t0j-ei-IRc"/>
+                                            <action selector="touchedUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="XlI-Kk-tLS"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
