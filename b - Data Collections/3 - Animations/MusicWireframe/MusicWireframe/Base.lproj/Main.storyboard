@@ -69,6 +69,9 @@
                                         <state key="selected" image="pause.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="50"/>
                                         </state>
+                                        <connections>
+                                            <action selector="playPauseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J66-Hb-U1B"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsD-49-NDO" userLabel="Forward Button">
                                         <rect key="frame" x="228.33333333333331" y="0.0" width="44.666666666666686" height="50"/>
