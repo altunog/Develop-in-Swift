@@ -7,6 +7,9 @@ print(url.query() as Any)
 
 Task {
     let (data, response) = try await URLSession.shared.data(from: url)
-    
-    print(data)
+
+    if let httpResponse = response as? HTTPURLResponse,
+       httpResponse.statusCode == 200 {
+        print(data)
+    }
 }
